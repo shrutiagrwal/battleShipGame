@@ -4,7 +4,9 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
+import lombok.RequiredArgsConstructor;
 
+@RequiredArgsConstructor
 public class BattleShipGame {
     private final FireStrategy fireStrategy;
     private int n;
@@ -12,10 +14,6 @@ public class BattleShipGame {
     private Player playerB;
     private final Map<Coordinate, Ship> occupancy = new HashMap<>();
     private boolean started;
-
-    public BattleShipGame(FireStrategy fireStrategy) {
-        this.fireStrategy = fireStrategy;
-    }
 
     public void initGame(int n) {
         if (n < 2 || n % 2 != 0) {
